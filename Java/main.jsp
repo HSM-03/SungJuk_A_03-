@@ -1,5 +1,5 @@
 <%@page import="pro1.학점조회화면"%>
-<%@page import="pro1.성적입력화면"%>
+<%@page import="pro1.성적등록화면"%>
 <%@page import="pro1.성적"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -16,19 +16,19 @@
     <%
         // 1. 객체 준비
         성적 data = new 성적();
-        성적입력화면 inputUI = new 성적입력화면();
+    	성적등록화면 inputUI = new 성적등록화면();
         학점조회화면 searchUI = new 학점조회화면();
 
-        // 2. 성적 입력 실행 (교수id: nha)
+        // 2. 성적 입력 실행 (교수id: inha)
         out.println("<h3>[성적 입력 시나리오]</h3>");
-        String inputLog = inputUI.성적제출("nha", data, "2026_001", 95, 85, 90);
+        String inputLog = inputUI.성적전송("inha", data, "2026_001", 95, 85, 90);
         out.println("<p>처리 메시지: " + inputLog + "</p>");
 
         out.println("<br>");
 
-        // 3. 학점 조회 실행 (교수id: nha)
+        // 3. 학점 조회 실행 (교수id: inha)
         out.println("<h3>[학점 조회 시나리오]</h3>");
-        String searchLog = searchUI.학점결과표시("nha", data);
+        String searchLog = searchUI.결과표시("inha", data);
         out.println("<p>처리 메시지: " + searchLog + "</p>");
 
         out.println("<br>");

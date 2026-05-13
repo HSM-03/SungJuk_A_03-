@@ -1,6 +1,6 @@
 package pro1;
 
-public class 학점조회화면 {
+public class Search_Sungjuk_UI {
     private 교수 prof = new 교수();
 
     // +showGradeResult() 역할 수행

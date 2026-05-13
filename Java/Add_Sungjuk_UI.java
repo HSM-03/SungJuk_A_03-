@@ -1,6 +1,6 @@
 package pro1;
 
-public class 성적등록화면 {
+public class Add_Sungjuk_UI {
     private 교수 prof = new 교수();
     
     // +submitScore() 역할 수행

@@ -17,7 +17,7 @@ classDiagram
         +총점계산() int
         +평균계산() double
         +학점부여() String
-        +학점조회() 성적
+        +학점조회() 학점
     }
 
     class 성적등록화면 {

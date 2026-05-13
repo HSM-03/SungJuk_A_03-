@@ -1,39 +1,38 @@
-```mermaid
 classDiagram
-    class Professor {
-        -String professorId
-        +checkProfessor(id: String) boolean
+    class 교수 {
+        -String 교수번호
+        +교수체크(입력id: String) boolean
     }
 
-    class Sungjuk {
-        -String studentId
-        -int java
-        -int db
-        -int security
-        -int total
-        -double average
-        -String grade
-        +inputScore(studentId: String, java: int, db: int, security: int)
-        +calculateTotal() int
-        +calculateAverage() double
-        +assignGrade() String
-        +getSungjuk() Sungjuk
+    class 성적 {
+        -String 학생번호
+        -int 자바
+        -int DB
+        -int 보안
+        -int 총점
+        -double 평균
+        -String 학점
+        +성적입력(학생id: String, 자바: int, DB: int, 보안: int)
+        +총점계산() int
+        +평균계산() double
+        +학점부여() String
+        +학점조회() 성적
     }
 
-    class AddSungjukUI {
+    class 성적등록화면 {
         <<boundary>>
-        +displayInputForm()
-        +submitScore()
+        +입력폼표시()
+        +성적전송()
     }
 
-    class SearchSungjukUI {
+    class 성적조회화면 {
         <<boundary>>
-        +displaySearchForm()
-        +showGradeResult()
+        +조회폼표시()
+        +결과표시()
     }
 
-    %% Relationships
-    AddSungjukUI ..> Professor : use
-    AddSungjukUI ..> Sungjuk : use
-    SearchSungjukUI ..> Professor : use
-    SearchSungjukUI ..> Sungjuk : use
+    %% 관계 설정
+    성적등록화면 ..> 교수 : 교수확인요청
+    성적등록화면 ..> 성적 : 데이터저장
+    성적조회화면 ..> 교수 : 교수확인요청
+    성적조회화면 ..> 성적 : 데이터검색

@@ -8,7 +8,6 @@ sequenceDiagram
     P-->>UI: 결과 반환
     alt 체크 성공
         UI->>S: 학점조회()
-        S->>S: 학점 부여 로직 실행
         S-->>UI: 학점 결과 반환
     else 체크 실패
         UI-->>UI: 오류 메시지 출력
